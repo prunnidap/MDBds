@@ -1,0 +1,32 @@
+<form class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail2" class="form-label">Email</label>
+    <input [(ngModel)]="login.email" name="email" type="text" class="form-control" id="inputEmail2">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword2" class="form-label">Password</label>
+    <input [(ngModel)]="login.password" name="password" type="password" class="form-control" id="inputPassword2">
+  </div>
+  <div class="col-12">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verifEmail" (click) = "submit()">Se connecter</button>
+  </div>
+</form>
+
+<!-- Modal -->
+<div class="modal fade" id="verifEmail" tabindex="-1" aria-labelledby="annonceModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="annonceModal">Un e-mail de vérification vient de vous être envoyé à l'adresse {{login.email}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Veuillez confirmer votre e-mail pour poursuivre, ou vous connecter en tant qu'invité.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="rediriger()">Suivant (grisé si email pas confirmé)</button>
+      </div>
+    </div>
+  </div>
+</div>

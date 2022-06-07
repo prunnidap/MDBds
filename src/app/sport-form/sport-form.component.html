@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="mb-3">
+    <label for="inputPrenom" class="form-label">Nom du sport</label>
+    <input [(ngModel)]="sport.nom" type="text" class="form-control" id="inputPrenom" placeholder="">
+  </div>
+  <div class="mb-3">
+    <label for="inputPhoto" class="form-label">Photo</label>
+    <input [(ngModel)]="sport.image" type="text" class="form-control" type="text" id="inputPhoto">
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary mb-3" (click)="add()">Ajouter</button>
+  </div>
+</div>

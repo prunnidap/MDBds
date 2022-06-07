@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Sélectionnez un sport</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <app-sport *ngFor="let sportVar of sportArray; let i = index" [sport]="sportVar" [id]="i+1"></app-sport>
+  </div>
+  <p></p>
+  <button *ngIf="respo == true;" type="button" class="btn btn-primary btn-lg" (click)="rediriger()">Ajouter un sport</button>
+</div>

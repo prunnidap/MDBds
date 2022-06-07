@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="navbar-brand">
+          <img
+            src="assets/bds.png"
+            class="me-2"
+            height="30"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+        <li class="nav-item">
+          <a *ngIf="login.respo == false && login.membre == false && login.invite == false;else profil"
+             class="nav-link" [routerLink]="'/connexion'">Connexion</a>
+          <ng-template #profil>
+            <a class="nav-link" [routerLink]="'/profil'">Profil</a>
+          </ng-template>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/annonces'">Annonces</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="login.respo == true;" class="nav-link" [routerLink]="'/sports'">Ajouter/Modifier un créneau</a>
+          <a *ngIf="login.membre == true;" class="nav-link" [routerLink]="'/sports'">Réserver un créneau</a>
+          <a *ngIf="login.invite == true;" class="nav-link" [routerLink]="'/sports'">Réserver un créneau</a>
+
+        </li>
+        <li class="nav-item">
+          <a *ngIf="login.respo == true || login.membre == true || login.invite == true;"
+             class="nav-link" [routerLink]="'/connexion'" (click)="deconnexion()">Déconnexion</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

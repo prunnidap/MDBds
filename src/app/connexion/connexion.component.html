@@ -1,0 +1,26 @@
+<div class="container text-center" id = "accordion">
+  <div class="row">
+    <div class="col">
+      <a data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+        <img src="./assets/coach.jpg" class="img-thumbnail" title="Responsable créneau">
+      </a>
+    </div>
+    <div class="col">
+      <a data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+        <img src="./assets/bds.png" class="img-thumbnail" title="Membre BDS">
+      </a>
+    </div>
+  </div>
+  <div class="collapse" id="collapse1" data-bs-parent="#accordion">
+    <p></p>
+    <div class="d-flex justify-content-center">
+      <app-respoform></app-respoform>
+    </div>
+  </div>
+  <div class="collapse" id="collapse2" data-bs-parent="#accordion">
+    <p></p>
+    <div class="d-flex justify-content-center">
+      <app-membreform></app-membreform>
+    </div>
+  </div>
+</div>

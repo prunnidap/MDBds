@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="mb-3">
+    <label for="inputNom" class="form-label">Nom du responsable du créneau</label>
+    <input [(ngModel)]="creneau.respo" type="text" class="form-control" id="inputNom" placeholder="">
+  </div>
+  <div class="mb-3">
+    <label for="inputPhotoRespo" class="form-label">Photo du responsable</label>
+    <input [(ngModel)]="creneau.photoRespo" type="text" class="form-control" type="text" id="inputPhotoRespo">
+  </div>
+  <div class="mb-3">
+    <label for="inputJour" class="form-label">Jour de la semaine</label>
+    <input [(ngModel)]="creneau.jour" type="text" class="form-control" type="text" id="inputJour">
+  </div>
+  <div class="mb-3">
+    <label for="inputHeureD" class="form-label">Heure de début</label>
+    <input [(ngModel)]="creneau.heureDebut" type="text" class="form-control" type="text" id="inputHeureD">
+  </div>
+  <div class="mb-3">
+    <label for="inputHeureF" class="form-label">Heure de fin</label>
+    <input [(ngModel)]="creneau.heureFin" type="text" class="form-control" type="text" id="inputHeureF">
+  </div>
+  <div class="mb-3">
+    <label for="inputLieu" class="form-label">Lieu</label>
+    <input [(ngModel)]="creneau.lieu" type="text" class="form-control" type="text" id="inputLieu">
+  </div>
+  <div class="mb-3">
+    <label for="inputDescriptif" class="form-label">Descriptif</label>
+    <input [(ngModel)]="creneau.descriptif" type="text" class="form-control" type="text" id="inputDescriptif">
+  </div>
+  <div class="mb-3">
+    <label for="inputNbP" class="form-label">Nombre de participants maximum</label>
+    <input [(ngModel)]="creneau.nbParticipants" type="text" class="form-control" type="text" id="inputNbP">
+  </div>
+  <div class="mb-3">
+    <label for="inputInfosBonus" class="form-label">Infos complémentaires</label>
+    <input [(ngModel)]="creneau.infosBonus" type="text" class="form-control" type="text" id="inputInfosBonus">
+  </div>
+  <div class="mb-3">
+    <label for="inputPhotoCreneau" class="form-label">Photo du créneau</label>
+    <input [(ngModel)]="creneau.imageCreneau" type="text" class="form-control" type="text" id="inputPhotoCreneau">
+  </div>
+
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary mb-3" (click)="add()">Ajouter</button>
+  </div>
+</div>

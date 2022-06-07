@@ -1,0 +1,6 @@
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <app-annonces *ngFor="let annoncesVar of annoncesArray; let i = index" [annonces]="annoncesVar" [id]="i+1"></app-annonces>
+  </div>
+</div>
+

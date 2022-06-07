@@ -1,0 +1,9 @@
+<div class="container">
+  <p></p>
+  <h1>Créneaux</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <app-creneau *ngFor="let creneauVar of creneauArray; let i = index" [creneau]="creneauVar" [id]="i+1"></app-creneau>
+  </div>
+  <p></p>
+  <button *ngIf="respo == true;" type="button" class="btn btn-primary btn-lg" (click)="rediriger()">Ajouter un créneau</button>
+</div>

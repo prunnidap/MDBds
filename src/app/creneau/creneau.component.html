@@ -1,0 +1,44 @@
+<p></p>
+<div class="card">
+  <h4 class="card-header">{{creneau.jour}}, {{creneau.heureDebut}} à {{creneau.heureFin}}</h4>
+  <img *ngIf="creneau.imageCreneau != '';"src="{{creneau.imageCreneau}}" class="card-img-top" alt="image">
+  <div class="card-body">
+    <h5 class="card-title">{{creneau.lieu}}</h5>
+    <p class="card-text">Responsable : {{creneau.respo}}</p>
+    <a class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#creneau'+creneau.id"
+        >Réserver</a>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" [id]="'creneau'+creneau.id" tabindex="-1" [attr.aria-labelledby]="'creneauModal'+creneau.id" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" [id]="'creneauModal'+creneau.id">Créneau du {{creneau.jour}} de {{creneau.heureDebut}} à {{creneau.heureFin}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Responsable : {{creneau.respo}}</h5>
+        <img *ngIf="creneau.photoRespo != '';"src="{{creneau.photoRespo}}" class="img-fluid" alt="image">
+        <h5>Lieu : {{creneau.lieu}}</h5>
+        <p>Nombre de participants maximum : {{creneau.nbParticipants}}</p>
+        <p>Description : {{creneau.descriptif}}</p>
+        <p *ngIf="creneau.infosBonus != '';">Infos Complémentaires : {{creneau.infosBonus}}</p>
+        <p *ngIf="creneau.participants.length >= creneau.nbParticipants;">Le créneau est plein.</p>
+        <p>Participants : {{creneau.participants.length}}/{{creneau.nbParticipants}}</p>
+        <p *ngFor="let participantVar of creneau.participants;">
+          {{participantVar.prenom}} {{participantVar.nom}}
+        </p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+        <button *ngIf="creneau.participants.length < creneau.nbParticipants && !creneau.participants.includes(profil);" type="button" class="btn btn-primary" (click)="reserver()">Réserver</button>
+        <button *ngIf="creneau.participants.includes(profil);" type="button" class="btn btn-danger" (click)="annuler()">Se désister</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
