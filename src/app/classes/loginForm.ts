@@ -33,9 +33,6 @@ export class LoginForm {
   }
 
   @required()
-  userName: string;
-
-  @required()
   password: string;
 
   @required()
